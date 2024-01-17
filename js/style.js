@@ -7,6 +7,10 @@ $(document).ready(function(){
 
     // 스타일 인덱스
     styleIdx();
+
+    // 스크롤 - 해더
+    scrollHeader();
+    
 })
 
 // 기본 - 화면의 가로, 세로 크기 / 스크롤 존재가 있다면 스크롤 크기 없으면 0
@@ -30,5 +34,12 @@ function styleIdx(){
         childrenSelect.each(function(i){
             $(this).css('--styleIdx', i)
         })
+    })
+}
+
+// 스크롤 - 해더
+function scrollHeader(){
+    $(window).scroll(function(){
+        $(this).scrollTop() > 0 ? $('header').addClass('scroll') : $('header').removeClass('scroll');
     })
 }

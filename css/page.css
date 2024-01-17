@@ -1,0 +1,15 @@
+/* 최상단 */
+.topArea{padding-block: 260px 230px; background: url(../images/main-BG.png) no-repeat center / cover;}
+.topArea b{font-size: 26px; line-height: 31px; margin-bottom: 20px; font-weight: 900; display: block}
+.topArea img{max-width: 538px; margin-bottom: 30px;}
+.topArea p{margin-bottom: 100px;}
+
+/* 럭키 드로우 */
+.luckydrawArea{padding-block: 240px 260px;}
+.luckydrawArea h2{margin-bottom: 60px;}
+.luckydrawArea p{margin-bottom: 140px;}
+.luckydrawArea ul{max-width: 1320px; margin-bottom: 160px; display: flex; justify-content: space-between; margin-inline: auto; gap: 4.5%;}
+.luckydrawArea ul li::before{margin-bottom: 50px; content: ''; display: block; aspect-ratio: 1; background: url(../images/luckydraw-img.png) no-repeat center top calc(100% / (var(--idxTotal) - 1) * var(--styleIdx)) / 100%;}
+.luckydrawArea ul li{flex: 1; font-size: 24px; line-height: 34px;}
+.luckydrawArea ul li b{display: block; font-weight: 900;}
+.luckydrawArea div{display: flex; justify-content: center; align-items: center; gap: 20px;}

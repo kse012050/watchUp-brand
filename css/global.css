@@ -1,0 +1,30 @@
+body{background-color: var(--color-background02); color: var(--color-font01); text-align: center;}
+img{width: 100%;}
+
+/* 컨텐츠 사이즈 */
+.contentSize{width: 100%; max-width: 1680px; margin-inline: auto;}
+.contentSize-padding{padding-inline: calc((100% - 1680px) / 2);}
+
+
+/* 버튼 */
+[class*="btn"]{width: 260px; height: 70px; font-size: 22px; font-weight: 700; display: flex; justify-content: center; align-items: center; border: 1px solid var(--color-font01); box-sizing: border-box;}
+.btn-play::before{content: ''; width: 26px; aspect-ratio: 1; background: url(../images/icon-play.png) no-repeat center / cover; margin-right: 15px;}
+
+/*  */
+.lineThrough{position: relative; z-index: 1;}
+.lineThrough::before{content: ''; position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: calc(100% + 1em); height: 0.15em; background-color: var(--color-point); z-index: -1;}
+
+
+
+/* 공통 */
+[class*="Area"] h2{font-size: 60px; line-height: 72px; font-weight: 900;}
+[class*="Area"] > p:first-of-type{font-size: 22px; line-height: 30px; font-weight: 400;}
+
+
+/* 해더 */
+header{padding-top: 42px; padding-bottom: 12px; position: fixed; left: 0; top: 0; width: 100%; transition: 0.5s padding-top; z-index: 100;}
+header div{display: flex; justify-content: space-between; align-items: center;}
+header div h1{width: 150px;}
+header div > a{font-size: 18px; display: flex; align-items: center;}
+header div > a::before{content: ''; width: 26px; aspect-ratio: 1; background: url(../images/icon-download.png) no-repeat center / cover; margin-right: 8px;}
+header.scroll{padding-top: 12px; background-color: rgba(00, 00, 00, 0.7);}
