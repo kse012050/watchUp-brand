@@ -7,12 +7,12 @@ img{width: 100%;}
 
 
 /* 버튼 */
-[class*="btn"]{width: 260px; height: 70px; font-size: 22px; font-weight: 700; display: flex; justify-content: center; align-items: center; border: 1px solid var(--color-font01); box-sizing: border-box;}
+[class*="btn"]{width: 260px; height: 70px; font-size: 22px; font-weight: 700; display: inline-flex; justify-content: center; align-items: center; border: 1px solid var(--color-font01); box-sizing: border-box;}
 .btn-play::before{content: ''; width: 26px; aspect-ratio: 1; background: url(../images/icon-play.png) no-repeat center / cover; margin-right: 15px;}
 
 /*  */
 .lineThrough{position: relative; z-index: 1;}
-.lineThrough::before{content: ''; position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: calc(100% + 1em); height: 0.15em; background-color: var(--color-point); z-index: -1;}
+.lineThrough::before{content: ''; position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: calc(100% + 0.5em); height: 0.15em; background-color: var(--color-point); z-index: -1;}
 
 
 
