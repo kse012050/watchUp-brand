@@ -7,8 +7,8 @@
     <!-- Iphone 모바일 확대 방지  maximum-scale=1.0, user-scalable=0-->
     <title>브랜드 - watchUp</title> 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="js/style.js"></script>
     <link rel="stylesheet" href="css/import.css">
+    <script src="js/style.js"></script>
 </head>
 <body>
     <header>
@@ -55,12 +55,42 @@
             </li>
         </ul>
         <div>
-            <button class="btn-play">참여방법 안내</button>
-            <button class="btn-play">라이브 진행 안내</button>
+            <button class="btn-play" data-popupOpen="popup-video-participate">참여방법 안내</button>
+            <button class="btn-play" data-popupOpen="popup-video-live">라이브 진행 안내</button>
         </div>
     </section>
 
-    <section class="proposalArea">
+    <div class="popup" data-popup="popup-video-participate">
+        <div class="contentSize">
+            <div class="popup-title">
+                <strong>
+                    참여방법<br/>
+                    안내
+                </strong>
+            </div>
+            <div class="popup-content">
+                컨텐츠
+            </div>
+            <button data-popupClose>닫기</button>
+        </div>
+    </div>
+
+    <div class="popup" data-popup="popup-video-live">
+        <div class="contentSize">
+            <div class="popup-title">
+                <strong>
+                    라이브 진행<br/>
+                    안내
+                </strong>
+            </div>
+            <div class="popup-content">
+                컨텐츠
+            </div>
+            <button data-popupClose>닫기</button>
+        </div>
+    </div>
+
+    <section class="proposalArea contentSize-padding">
         <h2>
             럭키드로우와 함께 할 수 있는<br/>
             <span class="lineThrough">다양한 제안을 기다립니다.</span>
@@ -71,27 +101,98 @@
         </p>
         <ul>
             <li>
-                <span>P.R,</span>
-                <span>Contents,</span>
-                <span>Sales,</span>
+                <div>
+                    <span>P.R,</span>
+                    <span>Contents,</span>
+                    <span>Sales,</span>
+                </div>
             </li> 
             <li>
-                <span>P.R,</span>
-                <span>Contents,</span>
-                <span>Sales,</span>
+                <div>
+                    <span>P.R,</span>
+                    <span>Contents,</span>
+                    <span>Sales,</span>
+                </div>
             </li> 
             <li>
-                <span>P.R,</span>
-                <span>Contents,</span>
-                <span>Sales,</span>
+                <div>
+                    <span>P.R,</span>
+                    <span>Contents,</span>
+                    <span>Sales,</span>
+                </div>
             </li> 
         </ul>
         <p>
             와치업 럭키드로우와 협업을 통해<br/>
             <b class="lineThrough">홍보,컨텐츠제작,판매</b> 3마리 토끼를 모두 잡아보세요.
         </p>
-        <button class="btn">협업 제안하기</button>
+        <button class="btn" data-popupOpen="popup-propose">협업 제안하기</button>
     </section>
+
+    <div class="popup" data-popup="popup-propose">
+        <div class="contentSize">
+            <div class="popup-title">
+                <strong>
+                    럭키드로우<br/>
+                    협업제안
+                </strong>
+                <p>
+                    빠른 시일안에 담당자가 확인하여,<br/>
+                    메일 or 연락처로 회신드리겠습니다.
+                </p>
+            </div>
+            <div class="popup-content">
+                <form>
+                    <fieldset>
+                        <ul>
+                            <li>
+                                <label for="">업체명</label>
+                                <div>
+                                    <input type="text" placeholder="업체명을 입력해주세요." required>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">담당자 성함</label>
+                                <div>
+                                    <input type="text" placeholder="담당자 성함/직책을 입력해주세요." required>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">연락처</label>
+                                <div>
+                                    <input type="text" placeholder="담당자 연락처를 입력해주세요." required>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">메일 주소</label>
+                                <div>
+                                    <input type="text" placeholder="회신드릴 메일 주소를 입력해주세요." required>
+                                </div>
+                            </li>
+                            <li class="fill">
+                                <label for="">상세 내용</label>
+                                <div>
+                                    <textarea name="" id="" placeholder="협업제안 상품 및 내용을 자세히 적어주시면 도움이 됩니다." required></textarea>
+                                </div>
+                            </li>
+                            <li class="fill">
+                                <label for="" data-text="있을 시에만 첨부해주세요.">첨부파일</label>
+                                <div>
+                                    <input type="text" placeholder="파일을 첨부해주세요.">
+                                    <input type="file">
+                                    <label for="">첨부</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <input type="checkbox" required>
+                        <label for="">개인정보 수집 및 이용안내에 동의합니다.</label>
+                        <input type="submit" value="제안하기">
+                    </fieldset>
+                </form>
+            </div>
+            <button data-popupClose>닫기</button>
+        </div>
+    </div>
 
     <section class="platformArea contentSize">
         <h2>
