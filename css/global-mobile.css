@@ -1,22 +1,59 @@
-
+br.pc{display: none;}
 
 /* 컨텐츠 사이즈 */
+.contentSize{max-width: var(--mobileWidth);}
+.contentSize-padding{padding-inline: max(calc((100% - var(--mobileWidth)) / 2), var(--spacing));}
 
 
 /* 버튼 */
+[class*="btn"]{width: 100%; height: 60px; font-size: 15px;}
+.btn-play::before{width: 22px; margin-right: 7px;}
 
-/*  */
 
 
 
 /* 공통 */
+[class*="Area"] h2{font-size: 30px; line-height: 36px;}
+[class*="Area"] > p:first-of-type{font-size: 15px; line-height: 20px;}
 
 
 /* 팝업 */
+.popup{overflow: auto;}
+.popup.active{display: block;}
+.popup > div{text-align: left; padding-block: 70px 20px; box-sizing: border-box;}
+.popup[data-popup*="popup-video"] > div{height: 100%;}
+.popup:not([data-popup*="popup-video"]) > div{min-height: 100%;}
+.popup > div .popup-title strong{font-size: 26px; line-height: 31px;}
+.popup > div .popup-title p{font-size: 15px; line-height: 20px; margin-top: 15px; margin-bottom: 60px;}
+.popup > div [data-popupClose]{right: 12px; top: 12px; width: 28px;}
+.popup[data-popup*="popup-video"] > div .popup-title{display: none;}
+.popup[data-popup*="popup-video"] > div .popup-content{height: 100%; display: flex; justify-content: center; align-items: center;}
+.popup[data-popup*="popup-video"] > div .popup-content video{width: 100%; max-height: 90vh;}
+.popup:not([data-popup*="popup-video"]) .popup-title strong br{display: none;}
+.popup fieldset{font-size: 13px;}
+.popup fieldset ul li:not(:last-child){margin-bottom: 30px;}
+.popup fieldset ul li > label{line-height: 16px; margin-bottom: 10px;}
+.popup fieldset ul li div :is(input, textarea){padding-inline: 15px;}
+.popup fieldset ul li div input{height: 48px;}
+.popup fieldset ul li div textarea{padding-block: 15px;}
+.popup fieldset input[type="checkbox"] + label{font-size: 13px; line-height: 16px; margin-top: 30px;}
+.popup fieldset input[type="checkbox"] + label::after{width: 18px; margin-right: 7px;}
+.popup fieldset input[type="submit"]{width: 100%; height: 60px; font-size: 15px;}
 
 
 
 /* 해더 */
+header div h1{width: 97px; padding-block: 11PX;}
+header div > a{position: fixed; left: 0; bottom: 0; width: 100%; font-size: 15px; line-height: 20px; padding-block: 20px; font-weight: 700; border-top: 1px solid white; background-color: var(--color-background02);}
 
 
 /* 푸터 */
+footer{padding-block: 40px 80px; text-align: left;}
+footer > div img{width: 97px; margin-bottom: 20px;}
+footer > div div ul{margin-bottom: 20px;}
+footer > div div ul li{font-size: 12px; line-height: 14px;}
+footer > div div ul li:not(:first-child)::before{margin-inline: 12px;}
+footer > div div address{font-size: 12px; line-height: 18px; margin-bottom: 20px;}
+footer > div div p{font-size: 11px; line-height: 13px; margin-bottom: 50px;}
+footer > div > a{text-indent: -9999px; font-size: 1px;}
+footer > div > a::after{width: 32.4px;}

@@ -58,12 +58,19 @@ function popup(){
 
     $('[data-popupClose]').click(function(){
         $(`[data-popup]`).removeClass('active');
+        if($(this).prev().children()[0].nodeName === 'VIDEO'){
+            $(this).prev().children()[0].pause()
+        }
     })
 }
 
 // 제안
 function proposal(){
     $('.proposalArea ul li div').each(function(){
+        $(this).after($(this)[0].outerHTML)
+        $(this).after($(this)[0].outerHTML)
+        $(this).after($(this)[0].outerHTML)
+        $(this).after($(this)[0].outerHTML)
         $(this).after($(this)[0].outerHTML)
         $(this).after($(this)[0].outerHTML)
     })
@@ -77,13 +84,37 @@ function proposal(){
         function animateAter(select, idx){
             let moveValue;
             if(idx % 2 === 0){
-                select.css('left', contentWidth - parentsWidth)
+                select.css('left', contentWidth - parentsWidth + window.innerWidth)
                 moveValue = parseFloat(select.css('left')) + contentWidth;
             }else{
                 select.css('left', 0)
                 moveValue = parseFloat(select.css('left')) - contentWidth;
             }
-            select.animate({left: moveValue}, 5000, 'linear', function(){
+            select.animate({left: moveValue}, 10000, 'linear', function(){
+                animateAter(select, idx)
+            })
+        }
+    },100)
+    
+    $('.rollingLogo img').each(function(){
+        $(this).after($(this)[0].outerHTML)
+        $(this).after($(this)[0].outerHTML)
+        $(this).after($(this)[0].outerHTML)
+        $(this).after($(this)[0].outerHTML)
+        $(this).after($(this)[0].outerHTML)
+        $(this).after($(this)[0].outerHTML)
+    })
+
+    setTimeout(function(){
+        $('.rollingLogo img').each(function(idx){
+            const select = $(this);
+            animateAter(select, idx)
+        })
+        function animateAter(select, idx){
+            $('.rollingLogo img').each(function(){
+                $(this).css('left',0)
+            })
+            select.animate({left: $('.rollingLogo img').outerWidth(true) * -1}, 4000, 'linear', function(){
                 animateAter(select, idx)
             })
         }

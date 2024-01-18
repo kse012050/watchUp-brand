@@ -1,22 +1,61 @@
-
+br.mobile{display: none;}
 
 /* 컨텐츠 사이즈 */
+.contentSize-padding{padding-inline: max(calc((100% - 1680px) / 2), var(--spacing));}
 
 
 /* 버튼 */
-
-/*  */
+[class*="btn"]{width: 260px; height: 70px; font-size: 22px;}
+.btn-play::before{width: 26px; margin-right: 15px;}
 
 
 
 /* 공통 */
+[class*="Area"] h2{font-size: 60px; line-height: 72px;}
+[class*="Area"] > p:first-of-type{font-size: 22px; line-height: 30px;}
 
 
 /* 팝업 */
-
+.popup.active{display: flex; align-items: center;}
+.popup > div{display: flex; min-height: calc(100% - (13.8889vh * 2));}
+.popup > div .popup-title{text-align: left;}
+.popup > div .popup-title strong{font-size: 50px; line-height: 60px;}
+.popup > div .popup-title p{font-size: 22px; line-height: 30px; margin-top: 40px;}
+.popup > div [data-popupClose]{right: 40px; top: 40px; width: 70px;}
+.popup:not([data-popup*="popup-video"]) > div{justify-content: space-between;}
+.popup:not([data-popup*="popup-video"]) > div .popup-content{width: 66.667%;}
+.popup[data-popup*="popup-video"] > div .popup-content{position: absolute; left: 50%; top: 50%; translate: -50% -50%;}
+.popup[data-popup*="popup-video"] > div .popup-content video{width: 405px; aspect-ratio: 405 / 720;}
+.popup fieldset{font-size: 16px; width: 100%; text-align: left;}
+.popup fieldset ul{display: flex; gap: 35px 40px; flex-wrap: wrap;}
+.popup fieldset ul li:not([class]){width: calc((100% - 40px) / 2);}
+.popup fieldset ul li.fill{width: 100%;}
+.popup fieldset ul li > label{font-size: 16px; line-height: 19px; margin-bottom: 15px;}
+.popup fieldset ul li div :is(input, textarea){padding-inline: 20px;}
+.popup fieldset ul li div input{height: 60px;}
+.popup fieldset ul li div textarea{height: 160px; padding-block: 20px;}
+.popup fieldset input[type="checkbox"] + label{font-size: 16px; line-height: 19px; margin-top: 35px;}
+.popup fieldset input[type="checkbox"] + label::after{width: 20px; margin-right: 10px;}
+.popup fieldset input[type="submit"]{width: 360px; height: 70px; font-size: 22px;}
 
 
 /* 해더 */
-
+header{padding-top: 42px; padding-bottom: 12px;}
+header div h1{width: 150px;}
+header div > a{font-size: 18px; display: flex; align-items: center;}
+header div > a::before{content: ''; width: 26px; aspect-ratio: 1; background: url(../images/icon-download.png) no-repeat center / cover; margin-right: 8px;}
+header.scroll{padding-top: 12px;}
 
 /* 푸터 */
+footer{padding-block: 80px 160px;}
+footer > div{display: flex; align-items: flex-start;}
+footer > div img{width: 214px;}
+footer > div div{margin-left: 120px;}
+footer > div div ul{padding-block: 30px;}
+footer > div div ul li{font-size: 18px; line-height: 21px;}
+footer > div div ul li:not(:first-child)::before{margin-inline: 15px;}
+footer > div div address{font-size: 18px; line-height: 32px; margin-bottom: 30px;}
+footer > div div p{font-size: 16px; line-height: 32px; text-align: left;}
+footer > div > a{font-size: 18px; line-height: 21px; padding-top: 30px; margin-left: auto; font-weight: 400; color: rgba(255, 255, 255, 0.7);}
+footer > div > a::after{width: 45px; margin-top: 22.5px;}
+footer > div > a b{font-weight: 700;}
