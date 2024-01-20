@@ -63,4 +63,5 @@ footer > div div address dl{display: flex; align-items: center;}
 footer > div div address dl dt{display: flex; align-items: center;}
 footer > div div address dl dt::after{content: ':'; margin-inline: 0.4em;}
 footer > div div p{color: rgba(255, 255, 255, 0.3);}
-footer > div > a::after{content: ''; display: block; aspect-ratio: 45 / 47.5; background: url(../images/icon-kakao.png) no-repeat center / cover; margin-left: auto; opacity: 0.5;}
+footer > div > a{position: fixed; display: flex; border-radius: 30px; background-color: #FAE100;}
+footer > div > a::before{content: ''; aspect-ratio: 1; background: url(../images/icon-kakao.png) no-repeat center / cover;}

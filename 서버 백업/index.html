@@ -5,25 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0">
     <!-- Iphone 모바일 확대 방지  maximum-scale=1.0, user-scalable=0-->
-    <title>브랜드 - watchUp</title> 
+    <title>와치업(WatchUp)</title>
     <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="watchUp">
+    <meta property="og:site_name" content="와치업(WatchUp)">
     <!-- <meta property="og:url" content=""> -->
-    <meta property="og:title" content="watchUp">
-    <meta property="og:description" content="watchUp - 브랜드 홈페이지" />
-    <meta name="description" content="watchUp - 브랜드 홈페이지" />
+    <meta property="og:title" content="와치업(WatchUp)">
+    <meta property="og:description" content="매주 진행되는 와치업의 럭키드로우에서 여러분의 행운을 기대해보세요." />
+    <meta name="description" content="매주 진행되는 와치업의 럭키드로우에서 여러분의 행운을 기대해보세요." />
     <meta property="og:image" content="images/img_og.png" />
     <!-- 파비콘 -->
     <link rel="icon" href="images/favicon_watchup.ico">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/import.css">
     <script src="js/style.js"></script>
+    <script src="js/web.js"></script>
+    <script>
+        $(function() {
+            $('input[type="file"]').bind('change', function() {
+                $(this).next('.t-file-path').val($('input[type="file"]').val());
+            });
+        })
+
+    </script>
 </head>
 <body>
     <header>
         <div class="contentSize">
             <h1><a href=""><img src="images/logo.png" alt="WATCH UP"></a></h1>
-            <a href="">앱 다운로드</a>
+            <a href="https://watchup.page.link/Zi7X" target="_blank">앱 다운로드</a>
         </div>
     </header>
 
@@ -35,7 +44,7 @@
             매주 진행되는 희귀품목의 럭키드로우부터<br class="mobile"/> 내 관심시계 및 내 시계에 대한 실시간 가치계산까지<br/>
             취향과 재태크 모두 와치업으로 즐겨보세요.
         </p>
-        <a href="" class="btn">앱 다운로드</a>
+        <a href="https://watchup.page.link/Zi7X" target="_blank" class="btn">앱 다운로드</a>
     </section>
 
     <section class="luckydrawArea contentSize">
@@ -78,7 +87,7 @@
                 </strong>
             </div>
             <div class="popup-content">
-                <video src = "video/live.mp4" controls></video>
+                <video src = "video/participate.mp4" controls></video>
             </div>
             <button data-popupClose>닫기</button>
         </div>
@@ -93,7 +102,7 @@
                 </strong>
             </div>
             <div class="popup-content">
-                <video src = "video/participate.mp4" controls></video>
+                <video src = "video/live.mp4" controls></video>
             </div>
             <button data-popupClose>닫기</button>
         </div>
@@ -153,51 +162,51 @@
                 </p>
             </div>
             <div class="popup-content">
-                <form>
+                <form id="inquiryForm" onsubmit="return false">
                     <fieldset>
                         <ul>
                             <li>
                                 <label for="">업체명</label>
                                 <div>
-                                    <input type="text" placeholder="업체명을 입력해주세요." required class="error">
+                                    <input type="text" placeholder="업체명을 입력해주세요." required class="error" name="company_name" id="company_name">
                                 </div>
                             </li>
                             <li>
                                 <label for="">담당자 성함</label>
                                 <div>
-                                    <input type="text" placeholder="담당자 성함/직책을 입력해주세요." required>
+                                    <input type="text" placeholder="담당자 성함/직책을 입력해주세요." required name="person_in_charge" id="person_in_charge">
                                 </div>
                             </li>
                             <li>
                                 <label for="">연락처</label>
                                 <div>
-                                    <input type="text" placeholder="담당자 연락처를 입력해주세요." required>
+                                    <input type="text" placeholder="담당자 연락처를 입력해주세요." required name="contact" id="contact">
                                 </div>
                             </li>
                             <li>
                                 <label for="">메일 주소</label>
                                 <div>
-                                    <input type="text" placeholder="회신드릴 메일 주소를 입력해주세요." required>
+                                    <input type="text" placeholder="회신드릴 메일 주소를 입력해주세요." required name="email" id="email">
                                 </div>
                             </li>
                             <li class="fill">
                                 <label for="">상세 내용</label>
                                 <div>
-                                    <textarea name="" id="" placeholder="협업제안 상품 및 내용을 자세히 적어주시면 도움이 됩니다." required></textarea>
+                                    <textarea name="content" id="" placeholder="협업제안 상품 및 내용을 자세히 적어주시면 도움이 됩니다." required></textarea>
                                 </div>
                             </li>
                             <li class="fill">
                                 <label for="" data-text="있을 시에만 첨부해주세요.">첨부파일</label>
                                 <div>
-                                    <input type="text" placeholder="파일을 첨부해주세요.">
-                                    <input type="file">
-                                    <label for="">첨부</label>
+                                    <input type="file" name="attach_file" id="attach_file" accept=".xls, .xlsx, .pdf, image/*, video/*">
+                                    <input type="text" placeholder="파일을 첨부해주세요." class="t-file-path" readonly onclick="fileClick('attach_file')">
+                                    <label for="" onclick="fileClick('attach_file')">첨부</label>
                                 </div>
                             </li>
                         </ul>
-                        <input type="checkbox" required>
-                        <label for="">개인정보 수집 및 이용안내에 동의합니다.</label>
-                        <input type="submit" value="제안하기">
+                        <input type="checkbox" required value="y" id="agree" name="agree">
+                        <label for="agree">개인정보 수집 및 이용안내에 동의합니다.</label>
+                        <input type="submit" value="제안하기" onclick="api('inquiryForm')">
                     </fieldset>
                 </form>
             </div>
@@ -273,7 +282,7 @@
                 </address>
                 <p>Copyright ⓒ 2024 watchup. All rights reserved</p>
             </div>
-            <a href="">고객센터</a>
+            <a href="https://pf.kakao.com/_gNeBG" target="_blank"><b>고객센터</b> (카카오톡 채널)</a>
         </div>
     </footer>
 </body>

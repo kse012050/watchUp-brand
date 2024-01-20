@@ -55,5 +55,5 @@ footer > div div ul li{font-size: 12px; line-height: 14px;}
 footer > div div ul li:not(:first-child)::before{margin-inline: 12px;}
 footer > div div address{font-size: 12px; line-height: 18px; margin-bottom: 20px;}
 footer > div div p{font-size: 11px; line-height: 13px; margin-bottom: 50px;}
-footer > div > a{text-indent: -9999px; font-size: 1px;}
-footer > div > a::after{width: 32.4px;}
+footer > div > a{right: 20px; bottom: 80px; padding: 5px; text-indent: -9999px;}
+footer > div > a::before{width: 40px;}
